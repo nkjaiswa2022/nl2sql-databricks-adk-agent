@@ -6,9 +6,10 @@ This project demonstrates an Agent Development Kit (ADK) agent that interacts wi
 
 ```
 adk-agent/
-├── agent.py     # The ADK agent for the databricks
-├── server.py    # The MCP server exposing databricks query tools       
-├── __init__.py              
+├── databricks-agent/
+│   ├── agent.py             # The ADK agent for the databricks
+│   ├── server.py            # The MCP server exposing databricks tools
+│   └── __init__.py             
 ├── .env                   # For Google PROJECT and Location 
 ├── requirements.txt       # Python dependencies
 └── readme.md              # Instructions file
@@ -66,17 +67,18 @@ Set the environment variables. Create a `.env` file in the **root of the `adk-ag
     ```
     The `databricks_mcp_server.py` and `agent.py` will load this key.
 
-### 5. Create the SQLite Database and Tables
+### 5. Create the databricks Tables and load data
 
-The project includes a script to create and populate the SQLite database (`database.db`) with some initial tables (`users`, `todos`) and dummy data.
+The project includes a script to create and populate the databricks tables and load the  data.
 
-Navigate to the `local_mcp` directory and run the script:
+Navigate to the `databricks-agent` directory and run the sql script in databricks console:
 ```bash
-cd local_mcp
-python3 create_db.py
+cd databricks-agent
+databricks-ddl.sql 
+databricks-dml.sql
 cd ..
 ```
-This will create `local_mcp/database.db` if it doesn't already exist.
+This will create tables and load the data.
 
 ## Running the Agent and MCP Server
 
@@ -96,4 +98,4 @@ This will:
 - The `databricks_mcp_sserver.py` (MCP server) will start and listen for tool calls from the agent via stdio.
 - The agent will then be ready to process your instructions (which you would typically provide in a UI application).
 
-You should see log output from both the agent (if any) and the MCP server (in `local_mcp/mcp_server_activity.log`, and potentially to the console if you uncommented the stream handler in `server.py`).
+You should see log output from both the agent (if any) and the MCP server (in `dataicks-agent/mcp_server_activity.log`, and potentially to the console if you uncommented the stream handler in `databricks-mcp-server.py`).
