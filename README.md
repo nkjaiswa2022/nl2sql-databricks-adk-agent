@@ -8,7 +8,7 @@ This project demonstrates an Agent Development Kit (ADK) agent that interacts wi
 adk-agent/
 ├── databricks-agent/
 │   ├── agent.py             # The ADK agent for the databricks
-│   ├── databricks-mcp-server.py            # The MCP server exposing databricks tools
+│   ├── databricks_mcp_server.py            # The MCP server exposing databricks tools
 │   └── __init__.py             
 ├── .env                   # For Google PROJECT and Location 
 ├── requirements.txt       # Python dependencies
