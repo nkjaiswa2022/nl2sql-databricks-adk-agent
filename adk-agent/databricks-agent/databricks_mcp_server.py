@@ -28,9 +28,29 @@ logging.basicConfig(
     ],
 )
 
-access_token='dapi36e97627934e997bb6de2affe42c683f'
-host='https://dbc-e7442730-51a3.cloud.databricks.com'
-http_path='/sql/1.0/warehouses/7c8f2485e0555874'
+# --- Fetch Variables from Environment/dotEnv ---
+access_token = os.getenv('DATABRICKS_ACCESS_TOKEN')
+host = os.getenv('DATABRICKS_HOST')
+http_path = os.getenv('DATABRICKS_HTTP_PATH')
+
+# Enforce check to ensure all required variables were loaded
+if not all([access_token, host, http_path]):
+    missing_vars = []
+    if not access_token:
+        missing_vars.append('DATABRICKS_ACCESS_TOKEN')
+    if not host:
+        missing_vars.append('DATABRICKS_HOST')
+    if not http_path:
+        missing_vars.append('DATABRICKS_HTTP_PATH')
+        
+    error_message = (
+        f"Missing required Databricks environment variables. "
+        f"Please check your .env file or environment setup. Missing: {', '.join(missing_vars)}"
+    )
+    
+    # Log the error and raise an exception to stop execution
+    logging.critical(error_message)
+    raise ValueError(error_message)
 
 async def execute_databricks_query(query:str):
     """
