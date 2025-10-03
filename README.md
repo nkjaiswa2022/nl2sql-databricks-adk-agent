@@ -57,28 +57,16 @@ pip install -r requirements.txt
 
 The ADK agent in this project uses a Gemini model. You'll need a Gemini API Access to you project.
 
-Set the environment variables. Create a `.env` file in the **root of the `adk-agent` folder** :
+Set the environment variables. Update an `nl2sql-databricks-adk-agent/adk-agent/databricks-agent/.env` variable file with PROJECT_ID and REGION 
 
-    ```env
-    # .env
-    GOOGLE_GENAI_USE_VERTEXAI=TRUE
-    GOOGLE_CLOUD_PROJECT=<PROJECT_ID>
-    GOOGLE_CLOUD_LOCATION=<REGION>
-    ```
-    The `databricks_mcp_server.py` and `agent.py` will load this key.
+The `databricks_mcp_server.py` and `agent.py` will load this key.
 
 ### 5. Create the databricks Tables and load data
 
-The project includes a script to create and populate the databricks tables and load the  data.
+We have pre-loaded the Databricks bakehouse_dataset sales tables into Databricks.
 
-Navigate to the `databricks-agent` directory and run the sql script in databricks console:
-```bash
-cd databricks-agent
-databricks-ddl.sql 
-databricks-dml.sql
-cd ..
-```
-This will create tables and load the data.
+For details and documentation on the dataset, please refer to the `nl2sql-databricks-adk-agent/bakehouse_dataset/README.MD` file.
+
 
 ## Running the Agent and MCP Server
 

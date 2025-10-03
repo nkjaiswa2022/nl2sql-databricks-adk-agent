@@ -28,10 +28,9 @@ logging.basicConfig(
     ],
 )
 
-
-access_token='<databricks_access_token>'
-host='<databricks_host>'
-http_path='<workpspace_path>'
+access_token='dapi36e97627934e997bb6de2affe42c683f'
+host='https://dbc-e7442730-51a3.cloud.databricks.com'
+http_path='/sql/1.0/warehouses/7c8f2485e0555874'
 
 async def execute_databricks_query(query:str):
     """

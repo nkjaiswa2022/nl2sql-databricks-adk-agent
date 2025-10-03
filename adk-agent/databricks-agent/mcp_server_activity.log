@@ -1,0 +1,86 @@
+2025-10-03 13:20:54,388 - DEBUG - [server.py:157] - Initializing server 'adk-tool-exposing-mcp-server'
+2025-10-03 13:20:54,388 - DEBUG - [server.py:414] - Registering handler for ListToolsRequest
+2025-10-03 13:20:54,388 - DEBUG - [server.py:486] - Registering handler for CallToolRequest
+2025-10-03 13:20:54,388 - DEBUG - [selector_events.py:64] - Using selector: KqueueSelector
+2025-10-03 13:20:54,392 - DEBUG - [server.py:627] - Received message: root=InitializedNotification(method='notifications/initialized', params=None, jsonrpc='2.0')
+2025-10-03 13:20:54,392 - DEBUG - [server.py:627] - Received message: <mcp.shared.session.RequestResponder object at 0x154a83c50>
+2025-10-03 13:20:54,392 - INFO - [server.py:664] - Processing request of type ListToolsRequest
+2025-10-03 13:20:54,392 - DEBUG - [server.py:666] - Dispatching request of type ListToolsRequest
+2025-10-03 13:20:54,392 - DEBUG - [server.py:713] - Response sent
+2025-10-03 13:20:57,792 - DEBUG - [server.py:627] - Received message: <mcp.shared.session.RequestResponder object at 0x154a83ed0>
+2025-10-03 13:20:57,792 - INFO - [server.py:664] - Processing request of type CallToolRequest
+2025-10-03 13:20:57,793 - DEBUG - [server.py:666] - Dispatching request of type CallToolRequest
+2025-10-03 13:21:03,986 - WARNING - [client.py:78] - [WARN] pyarrow is not installed by default since databricks-sql-connector 4.0.0,any arrow specific api (e.g. fetchmany_arrow) and cloud fetch will be disabled.If you need these features, please run pip install pyarrow or pip install databricks-sql-connector[pyarrow] to install
+2025-10-03 13:21:03,986 - DEBUG - [client.py:241] - Connection.__init__(server_hostname=https://dbc-e7442730-51a3.cloud.databricks.com, http_path=/sql/1.0/warehouses/7c8f2485e0555874)
+2025-10-03 13:21:03,995 - DEBUG - [unified_http_client.py:153] - No system proxy detected, using direct connections only
+2025-10-03 13:21:03,995 - DEBUG - [session.py:115] - Creating Thrift backend client
+2025-10-03 13:21:03,995 - DEBUG - [thrift_backend.py:149] - ThriftBackend.__init__(server_hostname=https://dbc-e7442730-51a3.cloud.databricks.com, port=443, http_path=/sql/1.0/warehouses/7c8f2485e0555874)
+2025-10-03 13:21:03,995 - DEBUG - [thrift_backend.py:259] - retry parameter: _retry_delay_min given_or_default 1.0
+2025-10-03 13:21:03,995 - DEBUG - [thrift_backend.py:259] - retry parameter: _retry_delay_max given_or_default 60.0
+2025-10-03 13:21:03,995 - DEBUG - [thrift_backend.py:259] - retry parameter: _retry_stop_after_attempts_count given_or_default 30
+2025-10-03 13:21:03,995 - DEBUG - [thrift_backend.py:259] - retry parameter: _retry_stop_after_attempts_duration given_or_default 900.0
+2025-10-03 13:21:03,995 - DEBUG - [thrift_backend.py:259] - retry parameter: _retry_delay_default given_or_default 5.0
+2025-10-03 13:21:03,999 - DEBUG - [thrift_backend.py:408] - Sending request: OpenSession(<REDACTED>)
+2025-10-03 13:21:04,000 - DEBUG - [connectionpool.py:1049] - Starting new HTTPS connection (1): dbc-e7442730-51a3.cloud.databricks.com:443
+2025-10-03 13:21:05,695 - DEBUG - [connectionpool.py:544] - https://dbc-e7442730-51a3.cloud.databricks.com:443 "POST /sql/1.0/warehouses/7c8f2485e0555874 HTTP/1.1" 200 132
+2025-10-03 13:21:05,695 - INFO - [retry.py:355] - Received status code 200 for POST request
+2025-10-03 13:21:05,695 - INFO - [thrift_http_client.py:208] - HTTP Response with status code 200, message: OK
+2025-10-03 13:21:05,696 - DEBUG - [thrift_backend.py:420] - Received response: TOpenSessionResp(<REDACTED>)
+2025-10-03 13:21:05,697 - INFO - [session.py:140] - Successfully opened session 01f0a02d-b71f-15c6-a095-ea68eb397b0f
+2025-10-03 13:21:05,697 - DEBUG - [telemetry_client.py:437] - Global exception handler installed for telemetry
+2025-10-03 13:21:05,697 - DEBUG - [telemetry_client.py:399] - TelemetryClientFactory initialized with thread pool (max_workers=10)
+2025-10-03 13:21:05,698 - DEBUG - [telemetry_client.py:468] - Creating new TelemetryClient for connection 01f0a02d-b71f-15c6-a095-ea68eb397b0f
+2025-10-03 13:21:05,698 - INFO - [databricks_mcp_server.py:58] - Executing query: SELECT paymentMethod, AVG(totalPrice) AS averageTransactionValue FROM workspace.bakehouse.sales_transactions GROUP BY paymentMethod
+2025-10-03 13:21:05,698 - DEBUG - [client.py:929] - Cursor.execute(operation=SELECT paymentMethod, AVG(totalPrice) AS averageTransactionValue FROM workspace.bakehouse.sales_transactions GROUP BY paymentMethod, parameters=None)
+2025-10-03 13:21:05,698 - DEBUG - [thrift_backend.py:1015] - ThriftBackend.execute_command(operation=SELECT paymentMethod, AVG(totalPrice) AS averageTransactionValue FROM workspace.bakehouse.sales_transactions GROUP BY paymentMethod, session_handle=TSessionHandle(sessionId=THandleIdentifier(guid=b'\x01\xf0\xa0-\xb7\x1f\x15\xc6\xa0\x95\xeah\xeb9{\x0f', secret=b'3\x8dR\x9d\x82rF\xeb\x84\x82\xcbA\x94f\x83\x9d'), serverProtocolVersion=42247))
+2025-10-03 13:21:05,698 - DEBUG - [thrift_backend.py:408] - Sending request: ExecuteStatement(<REDACTED>)
+2025-10-03 13:21:06,077 - DEBUG - [connectionpool.py:544] - https://dbc-e7442730-51a3.cloud.databricks.com:443 "POST /sql/1.0/warehouses/7c8f2485e0555874 HTTP/1.1" 200 135
+2025-10-03 13:21:06,077 - INFO - [retry.py:355] - Received status code 200 for POST request
+2025-10-03 13:21:06,077 - INFO - [thrift_http_client.py:208] - HTTP Response with status code 200, message: OK
+2025-10-03 13:21:06,078 - DEBUG - [thrift_backend.py:420] - Received response: TExecuteStatementResp(<REDACTED>)
+2025-10-03 13:21:06,079 - DEBUG - [thrift_backend.py:408] - Sending request: GetOperationStatus(<REDACTED>)
+2025-10-03 13:21:14,685 - DEBUG - [connectionpool.py:544] - https://dbc-e7442730-51a3.cloud.databricks.com:443 "POST /sql/1.0/warehouses/7c8f2485e0555874 HTTP/1.1" 200 53
+2025-10-03 13:21:14,685 - INFO - [retry.py:355] - Received status code 200 for POST request
+2025-10-03 13:21:14,685 - INFO - [thrift_http_client.py:208] - HTTP Response with status code 200, message: OK
+2025-10-03 13:21:14,685 - DEBUG - [thrift_backend.py:420] - Received response: TGetOperationStatusResp(<REDACTED>)
+2025-10-03 13:21:14,686 - DEBUG - [thrift_backend.py:408] - Sending request: GetOperationStatus(<REDACTED>)
+2025-10-03 13:21:20,247 - DEBUG - [connectionpool.py:544] - https://dbc-e7442730-51a3.cloud.databricks.com:443 "POST /sql/1.0/warehouses/7c8f2485e0555874 HTTP/1.1" 200 75
+2025-10-03 13:21:20,247 - INFO - [retry.py:355] - Received status code 200 for POST request
+2025-10-03 13:21:20,247 - INFO - [thrift_http_client.py:208] - HTTP Response with status code 200, message: OK
+2025-10-03 13:21:20,247 - DEBUG - [thrift_backend.py:420] - Received response: TGetOperationStatusResp(<REDACTED>)
+2025-10-03 13:21:20,247 - DEBUG - [thrift_backend.py:408] - Sending request: GetOperationStatus(<REDACTED>)
+2025-10-03 13:21:22,188 - DEBUG - [connectionpool.py:544] - https://dbc-e7442730-51a3.cloud.databricks.com:443 "POST /sql/1.0/warehouses/7c8f2485e0555874 HTTP/1.1" 200 75
+2025-10-03 13:21:22,189 - INFO - [retry.py:355] - Received status code 200 for POST request
+2025-10-03 13:21:22,189 - INFO - [thrift_http_client.py:208] - HTTP Response with status code 200, message: OK
+2025-10-03 13:21:22,189 - DEBUG - [thrift_backend.py:420] - Received response: TGetOperationStatusResp(<REDACTED>)
+2025-10-03 13:21:22,189 - DEBUG - [thrift_backend.py:408] - Sending request: GetResultSetMetadata(<REDACTED>)
+2025-10-03 13:21:22,601 - DEBUG - [connectionpool.py:544] - https://dbc-e7442730-51a3.cloud.databricks.com:443 "POST /sql/1.0/warehouses/7c8f2485e0555874 HTTP/1.1" 200 232
+2025-10-03 13:21:22,601 - INFO - [retry.py:355] - Received status code 200 for POST request
+2025-10-03 13:21:22,601 - INFO - [thrift_http_client.py:208] - HTTP Response with status code 200, message: OK
+2025-10-03 13:21:22,602 - DEBUG - [thrift_backend.py:420] - Received response: TGetResultSetMetadataResp(<REDACTED>)
+2025-10-03 13:21:22,602 - DEBUG - [thrift_backend.py:408] - Sending request: FetchResults(<REDACTED>)
+2025-10-03 13:21:22,972 - DEBUG - [connectionpool.py:544] - https://dbc-e7442730-51a3.cloud.databricks.com:443 "POST /sql/1.0/warehouses/7c8f2485e0555874 HTTP/1.1" 200 370
+2025-10-03 13:21:22,972 - INFO - [retry.py:355] - Received status code 200 for POST request
+2025-10-03 13:21:22,972 - INFO - [thrift_http_client.py:208] - HTTP Response with status code 200, message: OK
+2025-10-03 13:21:22,973 - DEBUG - [thrift_backend.py:420] - Received response: TFetchResultsResp(<REDACTED>)
+2025-10-03 13:21:22,973 - INFO - [databricks_mcp_server.py:69] - output_data : [{'paymentMethod': 'amex', 'averageTransactionValue': 20.28390596745027}, {'paymentMethod': 'mastercard', 'averageTransactionValue': 19.460664335664337}, {'paymentMethod': 'visa', 'averageTransactionValue': 20.105263157894736}]
+2025-10-03 13:21:22,973 - DEBUG - [thrift_backend.py:1353] - ThriftBackend.close_command(command_id=01f0a02d-b768-1dec-95c4-80052d0887fa|338d529d-8272-46eb-8482-cb419466839d)
+2025-10-03 13:21:22,973 - DEBUG - [thrift_backend.py:408] - Sending request: CloseOperation(<REDACTED>)
+2025-10-03 13:21:23,349 - DEBUG - [connectionpool.py:544] - https://dbc-e7442730-51a3.cloud.databricks.com:443 "POST /sql/1.0/warehouses/7c8f2485e0555874 HTTP/1.1" 200 42
+2025-10-03 13:21:23,349 - INFO - [retry.py:355] - Received status code 200 for POST request
+2025-10-03 13:21:23,349 - INFO - [thrift_http_client.py:208] - HTTP Response with status code 200, message: OK
+2025-10-03 13:21:23,349 - DEBUG - [thrift_backend.py:420] - Received response: TCloseOperationResp(<REDACTED>)
+2025-10-03 13:21:23,349 - INFO - [session.py:173] - Closing session 01f0a02d-b71f-15c6-a095-ea68eb397b0f
+2025-10-03 13:21:23,349 - DEBUG - [thrift_backend.py:408] - Sending request: CloseSession(<REDACTED>)
+2025-10-03 13:21:23,696 - DEBUG - [connectionpool.py:544] - https://dbc-e7442730-51a3.cloud.databricks.com:443 "POST /sql/1.0/warehouses/7c8f2485e0555874 HTTP/1.1" 200 40
+2025-10-03 13:21:23,696 - INFO - [retry.py:355] - Received status code 200 for POST request
+2025-10-03 13:21:23,696 - INFO - [thrift_http_client.py:208] - HTTP Response with status code 200, message: OK
+2025-10-03 13:21:23,696 - DEBUG - [thrift_backend.py:420] - Received response: TCloseSessionResp(<REDACTED>)
+2025-10-03 13:21:23,697 - DEBUG - [telemetry_client.py:510] - Removing telemetry client for connection 01f0a02d-b71f-15c6-a095-ea68eb397b0f
+2025-10-03 13:21:23,697 - DEBUG - [telemetry_client.py:517] - No more telemetry clients, shutting down thread pool executor
+2025-10-03 13:21:23,698 - DEBUG - [server.py:713] - Response sent
+2025-10-03 13:21:23,701 - DEBUG - [server.py:627] - Received message: <mcp.shared.session.RequestResponder object at 0x154a0e520>
+2025-10-03 13:21:23,701 - INFO - [server.py:664] - Processing request of type ListToolsRequest
+2025-10-03 13:21:23,701 - DEBUG - [server.py:666] - Dispatching request of type ListToolsRequest
+2025-10-03 13:21:23,702 - DEBUG - [server.py:713] - Response sent
+2025-10-03 13:42:39,063 - DEBUG - [telemetry_client.py:442] - Handling unhandled exception: ValueError
