@@ -57,7 +57,7 @@ pip install -r requirements.txt
 
 The ADK agent in this project uses a Gemini model. You'll need a Gemini API Access to you project.
 
-Set the environment variables. Update an `nl2sql-databricks-adk-agent/adk-agent/databricks-agent/.env` variable file with PROJECT_ID and REGION 
+Set the environment variables. Update an `nl2sql-databricks-adk-agent/adk-agent/databricks-agent/.env` [variable file] (https://github.com/nkjaiswa2022/nl2sql-databricks-adk-agent/blob/main/adk-agent/databricks-agent/.env) with PROJECT_ID and REGION 
 
 The `databricks_mcp_server.py` and `agent.py` will load this key.
 
@@ -65,7 +65,7 @@ The `databricks_mcp_server.py` and `agent.py` will load this key.
 
 We have pre-loaded the Databricks bakehouse_dataset sales tables into Databricks.
 
-For details and documentation on the dataset, please refer to the `nl2sql-databricks-adk-agent/bakehouse_dataset/README.MD` file.
+For details and documentation on the dataset, please refer to the `nl2sql-databricks-adk-agent/bakehouse_dataset/README.MD` [file](https://github.com/nkjaiswa2022/nl2sql-databricks-adk-agent/tree/main/bakehouse_dataset). 
 
 
 ## Running the Agent and MCP Server
