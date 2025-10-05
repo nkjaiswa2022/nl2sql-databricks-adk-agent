@@ -1,0 +1,20 @@
+environment:
+  resources:
+    - type: gcp_project
+      id: project_1
+      variant: gcpfree
+      startup_script:
+        type: qwiklabs
+        path: project_1_startup
+        custom_properties:
+          - key: project_2_id
+            reference: project_2.project_id
+    - type: gcp_project
+      id: project_2
+      variant: gcpfree
+      startup_script:
+        type:  qwiklabs
+        path: project_2_startup
+        custom_properties:
+          - key: project_1_id
+            reference: project_1.project_id
